@@ -1,0 +1,5 @@
+/vue.config.js
+/src/assets/icons/*.js
+/src/libs/*.js
+/src/components/v-date-picker
+/src/components/select
