@@ -3,3 +3,4 @@
 /src/libs/*.js
 /src/components/v-date-picker
 /src/components/select
+/src/components/tableAuto

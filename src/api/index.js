@@ -1,6 +1,6 @@
 import axios from 'axios'
 import iView from 'iview'
-import { session } from '@/libs/location'
+// import { session } from '@/libs/location'
 import { baseUrl } from '@/config/deployUrl'
 // 配置API接口地址
 
@@ -41,8 +41,9 @@ function filterNull (o) {
 
 // 请求拦截器
 axios.interceptors.request.use(function (config) {
-  let token = session.parseJSON()
-  config.headers.common['authorization'] = token === null ? '' : token.authorization
+  // let token = session.parseJSON()
+  // config.headers.common['authorization'] = token === null ? '' : token.authorization
+  config.headers.common['authorization'] = '69092f17-8763-4028-8f2a-5fedf4db3b69'
   config.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8'
   return config
 }, function (error) {

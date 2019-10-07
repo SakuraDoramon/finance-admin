@@ -212,7 +212,6 @@
             }
         },
         data(){
-            console.log(this.type, 'this.type')
             const isRange = this.type.includes('range');
             const emptyArray = isRange ? [null, null] : [null];
             const initialValue = isEmptyArray((isRange ? this.value : [this.value]) || []) ? emptyArray : this.parseDate(this.value);
@@ -784,7 +783,6 @@
         mounted () {
             const initialValue = this.value;
             const parsedValue = this.publicVModelValue;
-            console.log(this.value, this.internalValue, 'kkkkkkkkkkk')
             if (typeof initialValue !== typeof parsedValue || JSON.stringify(initialValue) !== JSON.stringify(parsedValue)){
                 this.$emit('input', this.publicVModelValue); // to update v-model
             }

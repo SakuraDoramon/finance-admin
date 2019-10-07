@@ -19,7 +19,7 @@ let env = process.env.NODE_ENV === 'development'
 
 switch (env) {
   case 'development': // 本地环境
-    baseUrl = ''
+    baseUrl = 'http://192.168.1.160'
     uploadUrl = ''
     break
   case 'develop': // 开发线上环境

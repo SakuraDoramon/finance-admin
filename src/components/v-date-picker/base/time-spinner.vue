@@ -213,21 +213,42 @@
         watch: {
             hours: {
               handler (val) {
-                console.log(val, this.compiled, 'valllllllllll')
-                setTimeout(() => {
-                  if (!this.compiled) return;
+                if (this.compiled) {
                   this.scroll('hours', this.hoursList.findIndex(obj => obj.text == val));
-                }, 800);
+                } else {
+                  setTimeout(() => {
+                    if (!this.compiled) return;
+                    this.scroll('hours', this.hoursList.findIndex(obj => obj.text == val));
+                  }, 1200);
+                }
               },
               immediate: true
             },
-            minutes (val) {
-                if (!this.compiled) return;
-                this.scroll('minutes', this.minutesList.findIndex(obj => obj.text == val));
+            minutes: {
+              handler (val) {
+                if (this.compiled) {
+                  this.scroll('minutes', this.minutesList.findIndex(obj => obj.text == val));
+                } else {
+                  setTimeout(() => {
+                    if (!this.compiled) return;
+                    this.scroll('minutes', this.minutesList.findIndex(obj => obj.text == val));
+                  }, 1200);
+                }
+              },
+              immediate: true
             },
-            seconds (val) {
-                if (!this.compiled) return;
-                this.scroll('seconds', this.secondsList.findIndex(obj => obj.text == val));
+            seconds: {
+              handler (val) {
+                if (this.compiled) {
+                  this.scroll('seconds', this.secondsList.findIndex(obj => obj.text == val));
+                } else {
+                  setTimeout(() => {
+                    if (!this.compiled) return;
+                    this.scroll('seconds', this.secondsList.findIndex(obj => obj.text == val));
+                  }, 1200);
+                }
+              },
+              immediate: true
             },
             focusedTime(updated, old){
                 timeParts.forEach((part, i) => {
@@ -238,7 +259,10 @@
             }
         },
         mounted () {
-            this.$nextTick(() => this.compiled = true);
+          this.$nextTick(() => this.compiled = true);
+          setTimeout(() => {
+            this.compiled = true
+          }, 1000)
         }
-    };
+    }
 </script>

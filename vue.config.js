@@ -71,7 +71,7 @@ module.exports = {
   // 打包时不生成.map文件
   productionSourceMap: true
   // 这里写你调用接口的基础路径，来解决跨域，如果设置了代理，那你本地开发环境的axios的baseUrl要写为 '' ，即空字符串
-  ,devServer: {
-    proxy: 'http://10.16.1.32:7300/mock/5c0a446e1b4b5a76b07c0ad1/bank-enterprise-admin'
-  }
+  // ,devServer: {
+  //   proxy: 'http://10.16.1.32:7300/mock/5c0a446e1b4b5a76b07c0ad1/bank-enterprise-admin'
+  // }
 }

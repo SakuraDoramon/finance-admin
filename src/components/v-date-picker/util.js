@@ -16,7 +16,7 @@ export const toDate = function(date) {
 
 export const clearHours = function (time) {
     const cloneDate = new Date(time);
-    cloneDate.setHours(0, 0, 0, 0);
+    cloneDate.setHours(new Date().getHours(), new Date().getMinutes(), new Date().getSeconds(), 0);
     return cloneDate.getTime();
 };
 
@@ -68,9 +68,10 @@ export const nextMonth = function(src) {
 
 export const initTimeDate = function() {
     const date = new Date();
-    date.setHours(0);
-    date.setMinutes(0);
-    date.setSeconds(0);
+    console.log(date.getHours(), 'date.getHours()')
+    date.setHours(date.getHours());
+    date.setMinutes(date.getMinutes());
+    date.setSeconds(date.getSeconds());
     return date;
 };
 
